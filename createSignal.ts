@@ -4,7 +4,7 @@ type Setter<T> = (v: T | ((prev?: T) => T)) => T;
 type Options = { equals?: boolean };
 type signal<T> = [get: Accessor<T>, set: Setter<T>];
 type Accessor<T> = () => T;
-
+//signal
 export function createSignal<T>(initialValue: T, options?: Options): signal<T> {
     const r = shallowRef(initialValue)
     const get: Accessor<T> = () => r.value
