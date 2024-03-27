@@ -5,7 +5,7 @@ type Options = { equals?: boolean };
 type signal<T> = [get: Accessor<T>, set: Setter<T>];
 type Accessor<T> = () => T;
 
-export function createSignal<T>(initialValue: T, options?: Options): signal<T> {
+export function createSignal<T>(initialValue?: T, options?: Options): signal<T> {
     const r = shallowRef(initialValue)
     const getter: Accessor<T> = () => r.value
     const setter: Setter<T> = (v: unknown) => {
